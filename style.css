@@ -47,7 +47,7 @@ p {
 #blackboard {
     border: 10px solid black;
     height: 700px;
-    width: 1800px;        
+    width: 1890px;        
     text-align: center;    
 }
 
@@ -56,17 +56,23 @@ p {
     padding: 5px;
     margin: 2px;
     display: inline-block;
-    background: bisque;
-    float: none;       
+    background: bisque;    
 }
 
 #arraybox {
     height: 600px;
-    width: 1730px;      
+    width: 1840px;      
     border: 5px solid darkgrey;   
     position: absolute;            
     bottom: 190px;
     left: 50px;
-    padding-bottom: 2%; 
+    padding-bottom: 2%;
+    transform: rotate(180deg); 
+}
+
+#label {
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    color: bisque;
 }
     
