@@ -10,14 +10,27 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <h1>Hi, welcome to my Sorting Visualizer!</h1>
+        
+        <h1>Sorting Visualizer</h1>
+        
+        <div id= "blackboard">
+            <div id="arraybox"></div>
+        </div>        
 
-        <script src="script.js" async defer></script>
+        <div class="slideContainer">
+            <input type="range" min="5" max="50" value="5" id="myRange" class="slider">            
+        </div>
+
+        <p id="boxcount">Items: <span id="value"></span></p>
+        
+
+        <script src="script.js" async defer></script>   
     </body>
 </html>
