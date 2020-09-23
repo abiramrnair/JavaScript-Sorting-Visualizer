@@ -46,31 +46,27 @@ p {
 
 #blackboard {
     border: 10px solid black;
-    height: 600px;
-    width: 1700px;
-    padding: 50px;
-    margin: 20px;
-    text-align: center;
-    align-items: center;    
+    height: 700px;
+    width: 1800px;        
+    text-align: center;    
 }
 
 .box {
-    border: 3px solid black;    
-    height: 630px;    
-    width: 10px;
+    border: 3px solid black;  
     padding: 5px;
     margin: 2px;
     display: inline-block;
-    background: bisque;      
+    background: bisque;
+    float: none;       
 }
 
 #arraybox {
-    min-height: fit-content;
-    max-height: 800px;
-    border: 5px solid green;   
-    position: sticky;
-    display: inline-block;
-    align-items: center; 
-    text-align: center;     
-    bottom: 200px;    
+    height: 600px;
+    width: 1730px;      
+    border: 5px solid darkgrey;   
+    position: absolute;            
+    bottom: 190px;
+    left: 50px;
+    padding-bottom: 2%; 
 }
+    

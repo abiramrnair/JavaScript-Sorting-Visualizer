@@ -4,11 +4,14 @@ var slidevalue = document.getElementById("value");
 slidevalue.innerHTML = slider.value;
 
 for (i = 0; i < 5; i++) {
+    var w = 730/5;
+    var num2 = w.toString() + "px";
     var n = Math.floor(Math.random() * 625);
     var num = n.toString() + "px";
     var box = document.createElement("div");            
     box.className = "box";
-    box.style.height = num;      
+    box.style.height = num;
+    box.style.width = num2;      
     var arraybox = document.getElementById("arraybox");
     arraybox.appendChild(box);
 }
@@ -24,12 +27,14 @@ slider.oninput = function() {
     }
 
     for (i = 0; i < numBoxes; i++) {
-        
+            var w = 730/numBoxes;
+            var num2 = w.toString() + "px";
             var n = Math.floor(Math.random() * 625);
             var num = n.toString() + "px";
             var box = document.createElement("div");            
             box.className = "box";
-            box.style.height = num;      
+            box.style.height = num;
+            box.style.width = num2;      
             var arraybox = document.getElementById("arraybox");            
 
             if ((i % 2) == 0) {
