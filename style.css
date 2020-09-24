@@ -56,7 +56,9 @@ p {
     padding: 5px;
     margin: 2px;
     display: inline-block;
-    background: bisque;    
+    background: bisque;
+    transform: rotate(-180deg);
+    color: bisque;
 }
 
 #arraybox {
@@ -70,9 +72,3 @@ p {
     transform: rotate(180deg); 
 }
 
-#label {
-    writing-mode: vertical-lr;
-    transform: rotate(-180deg);
-    color: bisque;    
-}
-    

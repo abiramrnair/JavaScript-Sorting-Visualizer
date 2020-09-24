@@ -12,7 +12,7 @@ for (i = 0; i < 5; i++) {
     box.className = "box";
     box.style.height = num;
     box.style.width = num2;
-    var text = document.createTextNode(n);
+    var text = document.createTextNode(".");
     text.className = "label";    
     box.appendChild(text);      
     var arraybox = document.getElementById("arraybox");
@@ -37,7 +37,7 @@ slider.oninput = function() {
             box.className = "box";
             box.style.height = num;
             box.style.width = num2;
-            var text = document.createTextNode(n);
+            var text = document.createTextNode(".");
             text.className = "label";    
             box.appendChild(text);      
             var arraybox = document.getElementById("arraybox");            
@@ -91,20 +91,28 @@ async function BubbleSort() {
             for (i = 0; i < lastUnsorted; i++) {                
                 a = removePx(myCollection[i].style.height);
                 b = removePx(myCollection[i+1].style.height);
-                               
+                             
                 if (b > a) {   
-                    myCollection[i].style.background = "black";                                   
+                    myCollection[i].style.background = "green";
+                    myCollection[i].style.color = "green";
+                    myCollection[i+1].style.background = "red";
+                    myCollection[i+1].style.color = "red";                                 
                     await Swap(i, i + 1);                                                  
                     isSorted = 0;
-                    myCollection[i].style.background = "bisque";                                         
+                    myCollection[i].style.background = "bisque";
+                    myCollection[i].style.color = "bisque";
+                    myCollection[i+1].style.background = "bisque";  
+                    myCollection[i+1].style.color = "bisque";                                       
                 }
                 
             }
             myCollection[i].style.background = "cyan";
+            myCollection[i].style.color = "cyan";
             lastUnsorted--;
         }
     for (i = 0; i < myCollection.length; i++) {
     myCollection[i].style.background = "cyan";
+    myCollection[i].style.color = "cyan";
     }
 }
 
