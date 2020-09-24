@@ -13,8 +13,8 @@ h1 {
 }
 
 .slider {
-    position: absolute;
-    bottom: 70px;
+    position: relative;
+    top: 90px;
     left: 890px;
 }
 
@@ -48,7 +48,8 @@ p {
     border: 10px solid black;
     height: 700px;
     width: 1890px;        
-    text-align: center;    
+    text-align: center; 
+    position: relative;   
 }
 
 .box {
@@ -59,16 +60,17 @@ p {
     background: bisque;
     transform: rotate(-180deg);
     color: bisque;
+    position: relative;
 }
 
 #arraybox {
     height: 600px;
     width: 1840px;      
     border: 5px solid darkgrey;   
-    position: absolute;            
-    bottom: 190px;
-    left: 50px;
-    padding-bottom: 2%;
+    position: relative;           
+    top: 40px;
+    left: 30px;
+    padding-bottom: 2%;    
     transform: rotate(180deg); 
 }
 
