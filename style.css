@@ -73,6 +73,6 @@ p {
 #label {
     writing-mode: vertical-lr;
     transform: rotate(-180deg);
-    color: bisque;
+    color: bisque;    
 }
     

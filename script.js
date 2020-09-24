@@ -1,7 +1,7 @@
 var slider = document.getElementById("myRange");
 var slidevalue = document.getElementById("value");
-
 slidevalue.innerHTML = slider.value;
+
 
 for (i = 0; i < 5; i++) {
     var w = 810/5;
@@ -21,8 +21,7 @@ for (i = 0; i < 5; i++) {
 
 slider.oninput = function() {
     slidevalue.innerHTML = this.value;
-    numBoxes = this.value;
-    
+    numBoxes = this.value;    
     var obj = document.getElementsByClassName("box");
 
     while(obj[0]) {
@@ -53,6 +52,7 @@ slider.oninput = function() {
 
 myCollection = document.getElementsByClassName("box");
 
+
 // Sorting Algorithm Prep Functions
 
 function addPx (value) {
@@ -65,31 +65,57 @@ function removePx (str) {
     return parseInt(num,10);  
 }
 
-function Swap(x, y) {
+
+
+async function Swap(x, y) {
+    await sleep((-22)*(myCollection.length) + 1120);
     var temp = myCollection[x].style.height;
     myCollection[x].style.height = myCollection[y].style.height;
     myCollection[y].style.height = temp;
 }
 
 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // BubbleSort
 
-function BubbleSort() {
+async function BubbleSort() {
     var isSorted = 0;
     var lastUnsorted = myCollection.length - 1;
+        
         while (isSorted == 0) {
             isSorted = 1;
-            for (i = 0; i < lastUnsorted; i++) {
+            for (i = 0; i < lastUnsorted; i++) {                
                 a = removePx(myCollection[i].style.height);
                 b = removePx(myCollection[i+1].style.height);
-                if (b > a) {
-                    Swap(i, i + 1);
+                               
+                if (b > a) {   
+                    myCollection[i].style.background = "black";                                   
+                    await Swap(i, i + 1);                                                  
                     isSorted = 0;
+                    myCollection[i].style.background = "bisque";                                         
                 }
+                
             }
+            myCollection[i].style.background = "cyan";
             lastUnsorted--;
         }
+    for (i = 0; i < myCollection.length; i++) {
+    myCollection[i].style.background = "cyan";
+    }
 }
+
+
+
+
+// MergeSort
+
+
+
+//QuickSort
 
 
 
