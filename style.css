@@ -19,7 +19,7 @@ h1 {
 }
 
 .slider::after {
-    content: '50';
+    content: '160';
     color: black;
     font-size: large;
     position: absolute;
@@ -39,7 +39,8 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#boxcount {    
+#boxcount {
+    position: relative;    
     text-align: center;
     padding-top: 1%;
 }
@@ -53,8 +54,8 @@ p {
 }
 
 .box {
-    border: 3px solid black;  
-    padding: 5px;
+    border: 1px solid black;  
+    padding: 2px;
     margin: 2px;
     display: inline-block;
     background: bisque;
@@ -68,9 +69,25 @@ p {
     width: 1840px;      
     border: 5px solid darkgrey;   
     position: relative;           
-    top: 40px;
+    top: 50px;
     left: 30px;
     padding-bottom: 2%;    
     transform: rotate(180deg); 
+}
+
+button {
+    background-color: white; /* Green */
+    border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 32px; 
+    position: relative;
+    left: 5%;
+    bottom: 20px;    
+    margin-left: 2%;
 }
 

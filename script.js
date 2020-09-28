@@ -1,10 +1,11 @@
 var slider = document.getElementById("myRange");
 var slidevalue = document.getElementById("value");
 slidevalue.innerHTML = slider.value;
+var sortSelection;
 
 
 for (i = 0; i < 5; i++) {
-    var w = 810/5;
+    var w = 200/5;
     var num2 = addPx(w);
     var n = Math.floor(Math.random() * 625) + 50;
     var num = addPx(n);
@@ -23,13 +24,13 @@ slider.oninput = function() {
     slidevalue.innerHTML = this.value;
     numBoxes = this.value;    
     var obj = document.getElementsByClassName("box");
-
+   
     while(obj[0]) {
         obj[0].parentNode.removeChild(obj[0]);
     }
 
     for (i = 0; i < numBoxes; i++) {
-            var w = 810/numBoxes;
+            var w = 200/numBoxes;
             var num2 = addPx(w);
             var n = Math.floor(Math.random() * 600) + 30;
             var num = addPx(n);
@@ -68,7 +69,11 @@ function removePx (str) {
 
 
 async function Swap(x, y) {
+    if (sortSelection = 0) {
     await sleep((-22)*(myCollection.length) + 1120);
+    } else if (sortSelection = 1) {
+        await sleep(25);
+    }
     var temp = myCollection[x].style.height;
     myCollection[x].style.height = myCollection[y].style.height;
     myCollection[y].style.height = temp;
@@ -85,7 +90,8 @@ function sleep(ms) {
 async function BubbleSort() {
     var isSorted = 0;
     var lastUnsorted = myCollection.length - 1;
-        
+    sortSelection = 0;
+
         while (isSorted == 0) {
             isSorted = 1;
             for (i = 0; i < lastUnsorted; i++) {                
@@ -116,14 +122,47 @@ async function BubbleSort() {
     }
 }
 
+// QuickSort
+
+async function Partition(start,end) {
+    var pivot = removePx(myCollection[end].style.height);
+    var partitionIndex = start;
+
+    for (i = start; i < end; i++) {
+        if (removePx(myCollection[i].style.height) >= pivot) {
+            myCollection[i].style.background = "red";
+            myCollection[i].style.color = "red";
+            myCollection[partitionIndex].style.background = "red";
+            myCollection[partitionIndex].style.color = "red";
+            await Swap(i, partitionIndex);
+            myCollection[i].style.background = "bisque";
+            myCollection[i].style.color = "bisque";
+            myCollection[partitionIndex].style.background = "bisque"; 
+            myCollection[partitionIndex].style.color = "bisque";            
+            partitionIndex++;                
+        }  
+    }
+    await Swap(partitionIndex, end);    
+    return partitionIndex;
+}
+
+async function QuickSort(start,end) {
+    if (start < end) {
+        var partitionIndex = await Partition(start, end);
+        await QuickSort(start, partitionIndex - 1);
+        await QuickSort(partitionIndex + 1, end);        
+    }    
+}
+
+function doQuickSort() {
+    sortSelection = 1;
+    QuickSort(0, myCollection.length - 1);    
+}
+
+// MergeSort 
 
 
 
-// MergeSort
-
-
-
-//QuickSort
 
 
 
