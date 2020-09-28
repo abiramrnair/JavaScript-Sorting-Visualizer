@@ -89,5 +89,6 @@ button {
     left: 5%;
     bottom: 20px;    
     margin-left: 2%;
+    outline: none;
 }
 
