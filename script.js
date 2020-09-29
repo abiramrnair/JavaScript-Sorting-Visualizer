@@ -125,6 +125,12 @@ async function BubbleSort() {
 // QuickSort
 
 async function Partition(start,end) {
+
+    for (i = start; i < end; i++) {
+        myCollection[i].style.background = "cyan";
+        myCollection[i].style.color = "cyan";
+    }
+
     var pivot = removePx(myCollection[end].style.height);
     var partitionIndex = start;
 
@@ -142,16 +148,26 @@ async function Partition(start,end) {
             partitionIndex++;                
         }  
     }
-    await Swap(partitionIndex, end);    
+    await Swap(partitionIndex, end);
+    
+    for (i = start; i < end; i++) {
+        myCollection[i].style.background = "bisque";
+        myCollection[i].style.color = "bisque";
+    }
+
     return partitionIndex;
 }
 
 async function QuickSort(start,end) {
+    
+
     if (start < end) {
+        isSorted = 1;
         var partitionIndex = await Partition(start, end);
         await QuickSort(start, partitionIndex - 1);
-        await QuickSort(partitionIndex + 1, end);        
-    }    
+        await QuickSort(partitionIndex + 1, end);                
+    }   
+    
 }
 
 function doQuickSort() {
@@ -163,7 +179,7 @@ function doQuickSort() {
 // MergeSort 
 
 async function merge(l, m, r) { 
-        await sleep(200);
+        await sleep(100);
         // Find sizes of two subarrays to be merged 
         var n1 = m - l + 1; 
         var n2 = r - m;        
@@ -219,24 +235,26 @@ async function merge(l, m, r) {
         while (j < n2) {                      
             myCollection[k].style.height = addPx(rightArray[j]); 
             j++; 
-            k++;
-                       
-        }   
-        
+            k++;                       
+        }
         
 }
 
 async function MergeSort(l, r) {
     await sleep(50);
     if (l < r) {
-        myCollection[l].style.background = "red";                 
+        myCollection[l].style.background = "red";
+        myCollection[l].style.color = "red";                 
         var m = Math.floor((l + r) / 2);          
         await MergeSort(l, m);        
         await MergeSort(m + 1, r);
         myCollection[r].style.background = "green";
+        myCollection[r].style.color = "green";
         await merge(l, m, r);
         myCollection[l].style.background = "cyan";
-        myCollection[r].style.background = "cyan";         
+        myCollection[l].style.color = "cyan";
+        myCollection[r].style.background = "cyan";
+        myCollection[r].style.color = "cyan";         
     }
 }
 
